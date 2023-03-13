@@ -1,0 +1,414 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EF275EB029BF1AC300955CF9 /* Hydratat_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF275EAF29BF1AC300955CF9 /* Hydratat_iOSApp.swift */; };
+		EF275EB229BF1AC300955CF9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF275EB129BF1AC300955CF9 /* ContentView.swift */; };
+		EF275EB429BF1AC400955CF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF275EB329BF1AC400955CF9 /* Assets.xcassets */; };
+		EF275EB729BF1AC400955CF9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF275EB629BF1AC400955CF9 /* Preview Assets.xcassets */; };
+		EF275EC229BF1C2900955CF9 /* amazon_palafita.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF275EC129BF1C2900955CF9 /* amazon_palafita.ttf */; };
+		EF275EC629BF1C5800955CF9 /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF275EC329BF1C5800955CF9 /* Avatar.swift */; };
+		EF275EC729BF1C5800955CF9 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF275EC429BF1C5800955CF9 /* Person.swift */; };
+		EF275EC829BF1C5800955CF9 /* Accomplishment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF275EC529BF1C5800955CF9 /* Accomplishment.swift */; };
+		EF275ECA29BF1C7000955CF9 /* AccomplishmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF275EC929BF1C7000955CF9 /* AccomplishmentViewModel.swift */; };
+		EF275ED029BF1C8400955CF9 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF275ECB29BF1C8400955CF9 /* StatsView.swift */; };
+		EF275ED129BF1C8400955CF9 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF275ECC29BF1C8400955CF9 /* AvatarView.swift */; };
+		EF275ED229BF1C8400955CF9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF275ECD29BF1C8400955CF9 /* HomeView.swift */; };
+		EF275ED329BF1C8400955CF9 /* AccomplishmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF275ECE29BF1C8400955CF9 /* AccomplishmentView.swift */; };
+		EF275ED429BF1C8400955CF9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF275ECF29BF1C8400955CF9 /* ProfileView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EF275EAC29BF1AC300955CF9 /* Hydratat-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hydratat-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF275EAF29BF1AC300955CF9 /* Hydratat_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hydratat_iOSApp.swift; sourceTree = "<group>"; };
+		EF275EB129BF1AC300955CF9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EF275EB329BF1AC400955CF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EF275EB629BF1AC400955CF9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EF275EC129BF1C2900955CF9 /* amazon_palafita.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = amazon_palafita.ttf; sourceTree = "<group>"; };
+		EF275EC329BF1C5800955CF9 /* Avatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
+		EF275EC429BF1C5800955CF9 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		EF275EC529BF1C5800955CF9 /* Accomplishment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Accomplishment.swift; sourceTree = "<group>"; };
+		EF275EC929BF1C7000955CF9 /* AccomplishmentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccomplishmentViewModel.swift; sourceTree = "<group>"; };
+		EF275ECB29BF1C8400955CF9 /* StatsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		EF275ECC29BF1C8400955CF9 /* AvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		EF275ECD29BF1C8400955CF9 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		EF275ECE29BF1C8400955CF9 /* AccomplishmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccomplishmentView.swift; sourceTree = "<group>"; };
+		EF275ECF29BF1C8400955CF9 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EF275EA929BF1AC300955CF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EF275EA329BF1AC300955CF9 = {
+			isa = PBXGroup;
+			children = (
+				EF275EAE29BF1AC300955CF9 /* Hydratat-iOS */,
+				EF275EAD29BF1AC300955CF9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EF275EAD29BF1AC300955CF9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF275EAC29BF1AC300955CF9 /* Hydratat-iOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EF275EAE29BF1AC300955CF9 /* Hydratat-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				EF275EBD29BF1B0A00955CF9 /* Font */,
+				EF275EBE29BF1B1100955CF9 /* Model */,
+				EF275EBF29BF1B1700955CF9 /* ViewModel */,
+				EF275EC029BF1B1D00955CF9 /* View */,
+				EF275EB129BF1AC300955CF9 /* ContentView.swift */,
+				EF275EAF29BF1AC300955CF9 /* Hydratat_iOSApp.swift */,
+				EF275EB329BF1AC400955CF9 /* Assets.xcassets */,
+				EF275EB529BF1AC400955CF9 /* Preview Content */,
+			);
+			path = "Hydratat-iOS";
+			sourceTree = "<group>";
+		};
+		EF275EB529BF1AC400955CF9 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				EF275EB629BF1AC400955CF9 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EF275EBD29BF1B0A00955CF9 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				EF275EC129BF1C2900955CF9 /* amazon_palafita.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		EF275EBE29BF1B1100955CF9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EF275EC529BF1C5800955CF9 /* Accomplishment.swift */,
+				EF275EC329BF1C5800955CF9 /* Avatar.swift */,
+				EF275EC429BF1C5800955CF9 /* Person.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EF275EBF29BF1B1700955CF9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EF275EC929BF1C7000955CF9 /* AccomplishmentViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EF275EC029BF1B1D00955CF9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EF275ECE29BF1C8400955CF9 /* AccomplishmentView.swift */,
+				EF275ECC29BF1C8400955CF9 /* AvatarView.swift */,
+				EF275ECD29BF1C8400955CF9 /* HomeView.swift */,
+				EF275ECF29BF1C8400955CF9 /* ProfileView.swift */,
+				EF275ECB29BF1C8400955CF9 /* StatsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EF275EAB29BF1AC300955CF9 /* Hydratat-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF275EBA29BF1AC400955CF9 /* Build configuration list for PBXNativeTarget "Hydratat-iOS" */;
+			buildPhases = (
+				EF275EA829BF1AC300955CF9 /* Sources */,
+				EF275EA929BF1AC300955CF9 /* Frameworks */,
+				EF275EAA29BF1AC300955CF9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Hydratat-iOS";
+			productName = "Hydratat-iOS";
+			productReference = EF275EAC29BF1AC300955CF9 /* Hydratat-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EF275EA429BF1AC300955CF9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					EF275EAB29BF1AC300955CF9 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = EF275EA729BF1AC300955CF9 /* Build configuration list for PBXProject "Hydratat-iOS" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EF275EA329BF1AC300955CF9;
+			productRefGroup = EF275EAD29BF1AC300955CF9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EF275EAB29BF1AC300955CF9 /* Hydratat-iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EF275EAA29BF1AC300955CF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF275EB729BF1AC400955CF9 /* Preview Assets.xcassets in Resources */,
+				EF275EB429BF1AC400955CF9 /* Assets.xcassets in Resources */,
+				EF275EC229BF1C2900955CF9 /* amazon_palafita.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EF275EA829BF1AC300955CF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF275ED229BF1C8400955CF9 /* HomeView.swift in Sources */,
+				EF275ED329BF1C8400955CF9 /* AccomplishmentView.swift in Sources */,
+				EF275EC629BF1C5800955CF9 /* Avatar.swift in Sources */,
+				EF275EB229BF1AC300955CF9 /* ContentView.swift in Sources */,
+				EF275EC729BF1C5800955CF9 /* Person.swift in Sources */,
+				EF275ECA29BF1C7000955CF9 /* AccomplishmentViewModel.swift in Sources */,
+				EF275EC829BF1C5800955CF9 /* Accomplishment.swift in Sources */,
+				EF275ED129BF1C8400955CF9 /* AvatarView.swift in Sources */,
+				EF275ED029BF1C8400955CF9 /* StatsView.swift in Sources */,
+				EF275ED429BF1C8400955CF9 /* ProfileView.swift in Sources */,
+				EF275EB029BF1AC300955CF9 /* Hydratat_iOSApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		EF275EB829BF1AC400955CF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EF275EB929BF1AC400955CF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EF275EBB29BF1AC400955CF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Hydratat-iOS/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "VD.Hydratat-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EF275EBC29BF1AC400955CF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Hydratat-iOS/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "VD.Hydratat-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EF275EA729BF1AC300955CF9 /* Build configuration list for PBXProject "Hydratat-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF275EB829BF1AC400955CF9 /* Debug */,
+				EF275EB929BF1AC400955CF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF275EBA29BF1AC400955CF9 /* Build configuration list for PBXNativeTarget "Hydratat-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF275EBB29BF1AC400955CF9 /* Debug */,
+				EF275EBC29BF1AC400955CF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EF275EA429BF1AC300955CF9 /* Project object */;
+}
