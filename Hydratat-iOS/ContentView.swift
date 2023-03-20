@@ -14,13 +14,6 @@ struct ContentView: View {
             VStack {
                 HStack {
                     Text("Hydratat-iOS").font(Font.custom("amazon_palafita", size: 24))
-                    /*NavigationLink(destination: ProfileView()) {
-                        Button {
-                            
-                        } label: {
-                            AvatarView()
-                        }
-                    }*/
                 }
                 TabView {
                     HomeView()
@@ -31,29 +24,17 @@ struct ContentView: View {
                     
                     StatsView()
                         .tabItem {
-                            Image(systemName: "map")
+                            Image(systemName: "chart.bar")
                             Text("Stats")
                         }
                     
                     ProfileView()
                         .tabItem {
-                            AvatarView()
+                            Image("Drop_mini").foregroundColor(.accentColor)
                             Text("Your profile")
                         }
                 }
             }
-            /*.listStyle(PlainListStyle())
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: ProfileView()) {
-                        Button {
-                            
-                        } label: {
-                            AvatarView()
-                        }
-                    }
-                }
-            }*/
         }
     }
 }

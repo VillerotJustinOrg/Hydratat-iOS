@@ -9,9 +9,23 @@ import SwiftUI
 
 struct ProfileView: View {
     var body: some View {
-        VStack(spacing: 10) {
-            AvatarView()
-            Text("Hello")
+        NavigationView {
+            VStack(spacing: 30) {
+                VStack(spacing: 10) {
+                    AvatarView(width: 50, height: 75/*, currentUser: user*/)
+                    Text("Username, Age")//user.name, user.age
+                        .font(.title)
+                    Text("Height, weight")//user.height, user.weight
+                        .font(.title2)
+                }
+                                
+                Button {
+                } label: {
+                    NavigationLink(destination: ChangeProfileView()) {
+                        Text("Change profile")
+                    }
+                }
+            }
         }
     }
 }

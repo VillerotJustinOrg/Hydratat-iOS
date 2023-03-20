@@ -17,9 +17,19 @@ struct Accomplishment {
         self.is_accomplished = true
     }
     
+    static func getNbAccomplished() -> Int {
+        var nb = 0
+        for acc in Accomplishment.allCases {
+            if acc.is_accomplished {
+                nb += 1
+            }
+        }
+        return nb
+    }
+    
     static var allCases = [
-        Accomplishment(name_accomp: "First time", description: "You drink for the first time"),
-        Accomplishment(name_accomp: "Ten Liters", description: "You drunk ten liters of water since the beginning")
+        Accomplishment(name_accomp: "1st", description: "Drink for the first time"),
+        Accomplishment(name_accomp: "x10", description: "Drink ten liters of water since the beginning")
     ]
 }
 
@@ -27,14 +37,3 @@ enum Accomplishments : String, CaseIterable {
     case yjfe
     case kfedh
 }
-
-/*enum Accomplishment: String, CaseIterable {
-    case firstTime = "First time"
-    case tenLiters = "Ten liters"
-    
-    var description: String {
-        switch self {
-            case .firstTime: return "Besoin journalier attient pour la 1ère fois"
-        }
-    }
-}*/

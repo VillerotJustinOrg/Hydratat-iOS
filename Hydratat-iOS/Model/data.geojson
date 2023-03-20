@@ -1,0 +1,9 @@
+[
+    {
+        "name": "toto",
+        "age": 27,
+        "height": 1.87,
+        "weight": 72
+        "colors": ["orange", "red"]
+    }
+]

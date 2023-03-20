@@ -8,23 +8,29 @@
 import SwiftUI
 
 struct AvatarView: View {
-    //@State var currentUser: User
+    @State var width: Double
+    @State var height: Double
+    //@State var avatar: Avatar
     
     var body: some View {
         ZStack {
             Circle()
-                .foregroundColor(.blue)
-                .frame(width: 25)
+                .foregroundColor(.orange)
+                //.foregroundColor(avatar.color1)
+                .frame(height: height * 1.1)
             
             Image("Drop")
+                .resizable()
                 .renderingMode(.template)
-                .foregroundColor(.orange)
+                .foregroundColor(.purple)
+                .frame(width: width, height: height)
+                //.foregroundColor(avatar.color2)
         }
     }
 }
 
 struct AvatarView_Previews: PreviewProvider {
     static var previews: some View {
-        AvatarView()
+        AvatarView(width: 50, height: 75)
     }
 }

@@ -13,7 +13,7 @@
 		EF275EB729BF1AC400955CF9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF275EB629BF1AC400955CF9 /* Preview Assets.xcassets */; };
 		EF275EC229BF1C2900955CF9 /* amazon_palafita.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF275EC129BF1C2900955CF9 /* amazon_palafita.ttf */; };
 		EF275EC629BF1C5800955CF9 /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF275EC329BF1C5800955CF9 /* Avatar.swift */; };
-		EF275EC729BF1C5800955CF9 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF275EC429BF1C5800955CF9 /* Person.swift */; };
+		EF275EC729BF1C5800955CF9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF275EC429BF1C5800955CF9 /* User.swift */; };
 		EF275EC829BF1C5800955CF9 /* Accomplishment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF275EC529BF1C5800955CF9 /* Accomplishment.swift */; };
 		EF275ECA29BF1C7000955CF9 /* AccomplishmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF275EC929BF1C7000955CF9 /* AccomplishmentViewModel.swift */; };
 		EF275ED029BF1C8400955CF9 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF275ECB29BF1C8400955CF9 /* StatsView.swift */; };
@@ -21,9 +21,11 @@
 		EF275ED229BF1C8400955CF9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF275ECD29BF1C8400955CF9 /* HomeView.swift */; };
 		EF275ED329BF1C8400955CF9 /* AccomplishmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF275ECE29BF1C8400955CF9 /* AccomplishmentView.swift */; };
 		EF275ED429BF1C8400955CF9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF275ECF29BF1C8400955CF9 /* ProfileView.swift */; };
+		EFECE95129C874230020CA43 /* ChangeProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECE95029C874230020CA43 /* ChangeProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EF1994A329BF3D6700F537FA /* data.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = data.geojson; sourceTree = "<group>"; };
 		EF275EAC29BF1AC300955CF9 /* Hydratat-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hydratat-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF275EAF29BF1AC300955CF9 /* Hydratat_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hydratat_iOSApp.swift; sourceTree = "<group>"; };
 		EF275EB129BF1AC300955CF9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -31,7 +33,7 @@
 		EF275EB629BF1AC400955CF9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EF275EC129BF1C2900955CF9 /* amazon_palafita.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = amazon_palafita.ttf; sourceTree = "<group>"; };
 		EF275EC329BF1C5800955CF9 /* Avatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
-		EF275EC429BF1C5800955CF9 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		EF275EC429BF1C5800955CF9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EF275EC529BF1C5800955CF9 /* Accomplishment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Accomplishment.swift; sourceTree = "<group>"; };
 		EF275EC929BF1C7000955CF9 /* AccomplishmentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccomplishmentViewModel.swift; sourceTree = "<group>"; };
 		EF275ECB29BF1C8400955CF9 /* StatsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
@@ -39,6 +41,7 @@
 		EF275ECD29BF1C8400955CF9 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		EF275ECE29BF1C8400955CF9 /* AccomplishmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccomplishmentView.swift; sourceTree = "<group>"; };
 		EF275ECF29BF1C8400955CF9 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		EFECE95029C874230020CA43 /* ChangeProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +107,8 @@
 			children = (
 				EF275EC529BF1C5800955CF9 /* Accomplishment.swift */,
 				EF275EC329BF1C5800955CF9 /* Avatar.swift */,
-				EF275EC429BF1C5800955CF9 /* Person.swift */,
+				EF275EC429BF1C5800955CF9 /* User.swift */,
+				EF1994A329BF3D6700F537FA /* data.geojson */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -125,6 +129,7 @@
 				EF275ECD29BF1C8400955CF9 /* HomeView.swift */,
 				EF275ECF29BF1C8400955CF9 /* ProfileView.swift */,
 				EF275ECB29BF1C8400955CF9 /* StatsView.swift */,
+				EFECE95029C874230020CA43 /* ChangeProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -204,7 +209,8 @@
 				EF275ED329BF1C8400955CF9 /* AccomplishmentView.swift in Sources */,
 				EF275EC629BF1C5800955CF9 /* Avatar.swift in Sources */,
 				EF275EB229BF1AC300955CF9 /* ContentView.swift in Sources */,
-				EF275EC729BF1C5800955CF9 /* Person.swift in Sources */,
+				EFECE95129C874230020CA43 /* ChangeProfileView.swift in Sources */,
+				EF275EC729BF1C5800955CF9 /* User.swift in Sources */,
 				EF275ECA29BF1C7000955CF9 /* AccomplishmentViewModel.swift in Sources */,
 				EF275EC829BF1C5800955CF9 /* Accomplishment.swift in Sources */,
 				EF275ED129BF1C8400955CF9 /* AvatarView.swift in Sources */,
