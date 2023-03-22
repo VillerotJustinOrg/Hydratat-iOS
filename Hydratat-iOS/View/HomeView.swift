@@ -8,24 +8,36 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var value: Double = 0.5
+    @State private var value: Double = 0.35
     
     var body: some View {
-        HStack(spacing: 15) {
-            Image("Bottle5")
-                .resizable()
-                .frame(width: 175, height: 643)
-            
-            VStack {
-                Text("Objectif  de la journée")
-                    .font(.title2)
-                    .multilineTextAlignment(.center)
+        NavigationView {
+            HStack(spacing: 15) {
+                Image("Bottle\(Int(value*8) + 1)")
+                    .resizable()
+                    .frame(width: 175, height: 643)
                 
-                Gauge(value: value, in: 0...1) {
-                    Text("\(Int(value * 100))%")
+                VStack(spacing: 30) {
+                    Text("Objectif  de la journée")
+                        .font(.title2)
+                        .multilineTextAlignment(.center)
+                    
+                    Gauge(value: value, in: 0...1) {
+                        Text("\(Int(value * 100))%")
+                    }
+                    .gaugeStyle(.accessoryCircularCapacity)
+                    .foregroundColor(.orange)
+                    
+                    Button {
+                    } label: {
+                        NavigationLink(destination: InputLitersView()) {
+                            Image(systemName: "plus.circle.fill")
+                                .resizable()
+                                .foregroundColor(.accentColor)
+                                .frame(width: 50, height: 50)
+                        }
+                    }
                 }
-                .gaugeStyle(.accessoryCircularCapacity)
-                .foregroundColor(.orange)
             }
         }
     }

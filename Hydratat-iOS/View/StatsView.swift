@@ -13,7 +13,7 @@ struct StatsView: View {
     var body: some View {
         VStack(spacing: 20) {
             Text("Accomplishments : \(Accomplishment.getNbAccomplished())/\(Accomplishment.allCases.count)")
-            VStack {
+            VStack(alignment: .leading) {
                 ForEach(Accomplishment.allCases, id: \.self.id_accomp) { acc in
                     AccomplishmentView(accomplishment: acc)
                 }

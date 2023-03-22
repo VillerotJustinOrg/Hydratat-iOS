@@ -29,7 +29,8 @@ struct Accomplishment {
     
     static var allCases = [
         Accomplishment(name_accomp: "1st", description: "Drink for the first time"),
-        Accomplishment(name_accomp: "x10", description: "Drink ten liters of water since the beginning")
+        Accomplishment(name_accomp: "x10", description: "Drink ten liters of drinking since the beginning"),
+        Accomplishment(name_accomp: "10 days", description: "Ten daily goals achieved")
     ]
 }
 

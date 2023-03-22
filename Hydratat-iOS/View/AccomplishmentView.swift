@@ -22,9 +22,9 @@ struct AccomplishmentView: View {
                 Gauge(value: value, in: 0...1) {
                     Text("\(Int(value * 100))%")
                 }
+                .frame(width: 60, height: 60)
                 .gaugeStyle(.accessoryCircularCapacity)
                 .foregroundColor(color)
-                .frame(width: 50, height: 50)
             }
 
             VStack(spacing: 5) {
@@ -34,7 +34,10 @@ struct AccomplishmentView: View {
                 Text("\(accomplishment.description)")
             }
         }
+        .padding()
         .foregroundColor(color)
+        .background(.gray.opacity(0.5))
+        .frame(height: 100)
     }
 }
 

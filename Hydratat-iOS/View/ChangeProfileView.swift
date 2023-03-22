@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ChangeProfileView: View {
+    @Environment(\.presentationMode) var presentationMode
     @State var user: User = User.allCases[0]
+    @State var showAlert: Bool = false
     
     var body: some View {
         VStack {
@@ -49,6 +51,7 @@ struct ChangeProfileView: View {
             }
             
             Button {
+                saveButtonPressed()
             } label: {
                 Text("Update profile")
                     .foregroundColor(.white)
@@ -57,10 +60,21 @@ struct ChangeProfileView: View {
                     .frame(maxWidth: .infinity)
                     .background(Color.accentColor)
                     .cornerRadius(10)
-
+                
             }
         }
         .navigationTitle("Update profile")
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text("Your item must be at least 3 characters long"))
+        }
+    }
+    
+    func saveButtonPressed() {
+        if(user.name.count < 3) {
+            showAlert.toggle()
+        } else {
+            self.presentationMode.wrappedValue.dismiss()    //Retourne à la page précédente après le click sur Save
+        }
     }
 }
 

@@ -26,6 +26,11 @@ struct ProfileView: View {
                     }
                 }
             }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink("Change", destination: ChangeUserView())
+                }
+            }
         }
     }
 }

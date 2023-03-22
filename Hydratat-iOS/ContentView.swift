@@ -30,7 +30,9 @@ struct ContentView: View {
                     
                     ProfileView()
                         .tabItem {
-                            Image("Drop_mini").foregroundColor(.accentColor)
+                            Image("Drop_mini")
+                                .renderingMode(.template)
+                                .foregroundColor(.accentColor)
                             Text("Your profile")
                         }
                 }
