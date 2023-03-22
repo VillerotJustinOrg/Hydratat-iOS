@@ -12,7 +12,12 @@ struct ProfileView: View {
         NavigationView {
             VStack(spacing: 30) {
                 VStack(spacing: 10) {
-                    AvatarView(width: 50, height: 75/*, currentUser: user*/)
+                    Button {
+                    } label: {
+                        NavigationLink(destination: ChangeAvatarView(user: User.allCases[0])) {
+                            AvatarView(width: 50, height: 75/*, currentUser: user*/)
+                        }
+                    }
                     Text("Username, Age")//user.name, user.age
                         .font(.title)
                     Text("Height, weight")//user.height, user.weight

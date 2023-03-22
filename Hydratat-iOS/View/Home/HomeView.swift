@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var value: Double = 0.35
+    @State private var value: Double = 1.0/3.0
     
     var body: some View {
         NavigationView {

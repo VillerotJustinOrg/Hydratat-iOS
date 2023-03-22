@@ -24,6 +24,7 @@
 		EF66CD7D29CB308A007A3CED /* ChangeUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66CD7C29CB308A007A3CED /* ChangeUserView.swift */; };
 		EF66CD7F29CB3578007A3CED /* InputLitersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66CD7E29CB3578007A3CED /* InputLitersView.swift */; };
 		EFECE95129C874230020CA43 /* ChangeProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECE95029C874230020CA43 /* ChangeProfileView.swift */; };
+		EFF1A1DE29CB445C004097F0 /* ChangeAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF1A1DD29CB445C004097F0 /* ChangeAvatarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		EF66CD7C29CB308A007A3CED /* ChangeUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserView.swift; sourceTree = "<group>"; };
 		EF66CD7E29CB3578007A3CED /* InputLitersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputLitersView.swift; sourceTree = "<group>"; };
 		EFECE95029C874230020CA43 /* ChangeProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileView.swift; sourceTree = "<group>"; };
+		EFF1A1DD29CB445C004097F0 /* ChangeAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAvatarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +84,6 @@
 				EF275EBE29BF1B1100955CF9 /* Model */,
 				EF275EBF29BF1B1700955CF9 /* ViewModel */,
 				EF275EC029BF1B1D00955CF9 /* View */,
-				EF275EB129BF1AC300955CF9 /* ContentView.swift */,
 				EF275EAF29BF1AC300955CF9 /* Hydratat_iOSApp.swift */,
 				EF275EB329BF1AC400955CF9 /* Assets.xcassets */,
 				EF275EB529BF1AC400955CF9 /* Preview Content */,
@@ -128,16 +129,50 @@
 		EF275EC029BF1B1D00955CF9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				EF275ECE29BF1C8400955CF9 /* AccomplishmentView.swift */,
-				EF275ECC29BF1C8400955CF9 /* AvatarView.swift */,
-				EF275ECD29BF1C8400955CF9 /* HomeView.swift */,
-				EF275ECF29BF1C8400955CF9 /* ProfileView.swift */,
-				EF275ECB29BF1C8400955CF9 /* StatsView.swift */,
-				EFECE95029C874230020CA43 /* ChangeProfileView.swift */,
-				EF66CD7C29CB308A007A3CED /* ChangeUserView.swift */,
-				EF66CD7E29CB3578007A3CED /* InputLitersView.swift */,
+				EFF1A1DB29CB4317004097F0 /* Home */,
+				EFF1A1D929CB4308004097F0 /* Profile */,
+				EFF1A1DA29CB4310004097F0 /* Stats */,
+				EF275EB129BF1AC300955CF9 /* ContentView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		EFF1A1D929CB4308004097F0 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				EFF1A1DC29CB442F004097F0 /* Avatar */,
+				EFECE95029C874230020CA43 /* ChangeProfileView.swift */,
+				EF66CD7C29CB308A007A3CED /* ChangeUserView.swift */,
+				EF275ECF29BF1C8400955CF9 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		EFF1A1DA29CB4310004097F0 /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				EF275ECE29BF1C8400955CF9 /* AccomplishmentView.swift */,
+				EF275ECB29BF1C8400955CF9 /* StatsView.swift */,
+			);
+			path = Stats;
+			sourceTree = "<group>";
+		};
+		EFF1A1DB29CB4317004097F0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				EF275ECD29BF1C8400955CF9 /* HomeView.swift */,
+				EF66CD7E29CB3578007A3CED /* InputLitersView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		EFF1A1DC29CB442F004097F0 /* Avatar */ = {
+			isa = PBXGroup;
+			children = (
+				EF275ECC29BF1C8400955CF9 /* AvatarView.swift */,
+				EFF1A1DD29CB445C004097F0 /* ChangeAvatarView.swift */,
+			);
+			path = Avatar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +254,7 @@
 				EF275EB229BF1AC300955CF9 /* ContentView.swift in Sources */,
 				EFECE95129C874230020CA43 /* ChangeProfileView.swift in Sources */,
 				EF275EC729BF1C5800955CF9 /* User.swift in Sources */,
+				EFF1A1DE29CB445C004097F0 /* ChangeAvatarView.swift in Sources */,
 				EF275ECA29BF1C7000955CF9 /* AccomplishmentViewModel.swift in Sources */,
 				EF275EC829BF1C5800955CF9 /* Accomplishment.swift in Sources */,
 				EF275ED129BF1C8400955CF9 /* AvatarView.swift in Sources */,

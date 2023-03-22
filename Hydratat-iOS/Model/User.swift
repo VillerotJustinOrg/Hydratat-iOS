@@ -14,16 +14,18 @@ struct User {
     var age: Int
     var height: Double
     var weight: Int
+    var drinking_objectif: Double //en mL
     
     static var allCases: [User] = [
-        User(avatar: Avatar(color1: "red", color2: "purple"), name: "egyfj", age: 28, height: 1.75, weight: 68)
+        User(avatar: Avatar(color1: "orange", color2: "purple"), name: "Flo", age: 28, height: 1.75, weight: 68, drinking_objectif: 1000)
     ]
     
-    mutating func modify(name: String, age: Int, height: Double, weight: Int, color1: String, color2: String) {
+    mutating func modify(name: String, age: Int, height: Double, weight: Int, drinking: Double, color1: String, color2: String) {
         self.name = name
         self.age = age
         self.height = height
         self.weight = weight
         self.avatar = Avatar(color1: color1, color2: color2)
+        self.drinking_objectif = drinking
     }
 }
