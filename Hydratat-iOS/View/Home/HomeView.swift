@@ -8,7 +8,13 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var value: Double = 1.0/3.0
+    private var user: User
+    private var value: Double
+    
+    init(user: User) {
+        self.user = user
+        self.value = Double(user.drinking_objectif)/2000.0
+    }
     
     var body: some View {
         NavigationView {
@@ -45,6 +51,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(user: User.allCases[0])
     }
 }

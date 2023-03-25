@@ -12,20 +12,32 @@ struct User {
     var avatar: Avatar
     var name: String
     var age: Int
-    var height: Double
+    var email: String
+    var height: Int //en cm
     var weight: Int
-    var drinking_objectif: Double //en mL
+    var drinking_objectif: Int //en mL
     
     static var allCases: [User] = [
-        User(avatar: Avatar(color1: "orange", color2: "purple"), name: "Flo", age: 28, height: 1.75, weight: 68, drinking_objectif: 1000)
+        User(avatar: Avatar(color1: "orange", color2: "purple"), name: "Flo", age: 28, email: "flo@gmail.com", height: 179, weight: 71, drinking_objectif: 1500),
+        User(avatar: Avatar(color1: "blue", color2: "green"), name: "Justin", age: 28, email: "justin@gmail.com", height: 175, weight: 65, drinking_objectif: 1000),
+        User(avatar: Avatar(color1: "red", color2: "orange"), name: "David", age: 28, email: "david@gmail.com", height: 178, weight: 68, drinking_objectif: 1000)
     ]
     
-    mutating func modify(name: String, age: Int, height: Double, weight: Int, drinking: Double, color1: String, color2: String) {
+    mutating func modifyAvatar(color1: String, color2: String) {
+        self.avatar = Avatar(color1: color1, color2: color2)
+    }
+    
+    mutating func modifyProfile(name: String, age: Int, email: String, height: Int, weight: Int, drinking: Int) {
         self.name = name
         self.age = age
+        self.email = email
         self.height = height
         self.weight = weight
-        self.avatar = Avatar(color1: color1, color2: color2)
         self.drinking_objectif = drinking
+    }
+    
+    mutating func equalsTo(user: User) -> Bool {
+        return self.id_user == user.id_user && self.avatar.equalsTo(avatar: user.avatar) && self.name == user.name && self.age == user.age &&
+                self.email == user.email && self.height == user.height && self.weight == user.weight && self.drinking_objectif == user.drinking_objectif
     }
 }

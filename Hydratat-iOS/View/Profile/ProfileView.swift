@@ -8,25 +8,30 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @State var user: User
+    
     var body: some View {
         NavigationView {
             VStack(spacing: 30) {
                 VStack(spacing: 10) {
                     Button {
                     } label: {
-                        NavigationLink(destination: ChangeAvatarView(user: User.allCases[0])) {
-                            AvatarView(width: 50, height: 75/*, currentUser: user*/)
+                        NavigationLink(destination: ChangeAvatarView(user: user)) {
+                            AvatarView(size: 50, user: user)
                         }
                     }
-                    Text("Username, Age")//user.name, user.age
+                    Text("\(user.name), \(user.age) years old")
                         .font(.title)
-                    Text("Height, weight")//user.height, user.weight
+                    Text("\(user.height) cm, \(user.weight) kg")
                         .font(.title2)
+                    Text("Drinking objective : \(user.drinking_objectif) mL")
+                        .foregroundColor(.white)
+                        .background(.blue)
                 }
                                 
                 Button {
                 } label: {
-                    NavigationLink(destination: ChangeProfileView()) {
+                    NavigationLink(destination: ChangeProfileView(user: user)) {
                         Text("Change profile")
                     }
                 }
@@ -42,6 +47,6 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(user: User.allCases[0])
     }
 }

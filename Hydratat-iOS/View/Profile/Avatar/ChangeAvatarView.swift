@@ -13,10 +13,8 @@ struct ChangeAvatarView: View {
     
     var body: some View {
         VStack {
-            Text("\(user.name)'s avatar")
-                .font(.title)
             Spacer()
-            AvatarView(width: 100, height: 150)
+            AvatarView(size: 100, user: user)
             VStack {
                 HStack {
                     Text("Color 1 : ")
@@ -29,7 +27,7 @@ struct ChangeAvatarView: View {
                 }
                 HStack {
                     Text("Color 2 : ")
-                    TextField("Name", text: $user.avatar.color1)
+                    TextField("Name", text: $user.avatar.color2)
                         .padding(.horizontal)
                         .frame(height: 55)
                         .frame(maxWidth: .infinity)
@@ -55,6 +53,7 @@ struct ChangeAvatarView: View {
     }
     
     func saveButtonPressed() {
+        user.modifyAvatar(color1: user.avatar.color1, color2: user.avatar.color2)
         self.presentationMode.wrappedValue.dismiss()    //Retourne à la page précédente après le click sur Save
     }
 }

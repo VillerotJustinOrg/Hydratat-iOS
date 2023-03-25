@@ -8,15 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var viewModel: AppViewModel
     var body: some View {
         ZStack {
             Color.accentColor.ignoresSafeArea()
             VStack {
                 HStack {
-                    Text("Hydratat-iOS").font(Font.custom("amazon_palafita", size: 24))
+                    Text("Hydratat-iOS").font(Font.custom("waver", size: 28))
                 }
                 TabView {
-                    HomeView()
+                    HomeView(user: viewModel.getCurrentUser())
                         .tabItem {
                             Image(systemName: "homekit")
                             Text("Home")
@@ -28,7 +29,7 @@ struct ContentView: View {
                             Text("Stats")
                         }
                     
-                    ProfileView()
+                    ProfileView(user: viewModel.getCurrentUser())
                         .tabItem {
                             Image("Drop_mini")
                                 .renderingMode(.template)
@@ -43,6 +44,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(AppViewModel())
     }
 }

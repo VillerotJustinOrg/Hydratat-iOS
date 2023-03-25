@@ -1,26 +1,24 @@
 //
-//  ChangeProfileView.swift
+//  AddUserView.swift
 //  Hydratat-iOS
 //
-//  Created by user234243 on 3/20/23.
+//  Created by user234243 on 3/25/23.
 //
 
 import SwiftUI
 
-struct ChangeProfileView: View {
+struct AddUserView: View {
     @Environment(\.presentationMode) var presentationMode
-    @State var user: User
-    @State var showAlert: Bool = false
+    @EnvironmentObject var viewModel: AppViewModel
+    @State private var showAlert = false
+    @State var values = ["","","","","",""]
+    @State private var alertContent = ""
     
     var body: some View {
         VStack {
-            HStack(spacing: 20) {
-                AvatarView(size: 50, user: user)
-            }
-            
             HStack {
                 Text("Username : ")
-                TextField("Name", text: $user.name)
+                TextField("Name", text: $values[0])
                     .padding(.horizontal)
                     .frame(width: 200, height: 55)
                     .background(Color(.systemGray4))
@@ -29,7 +27,7 @@ struct ChangeProfileView: View {
             
             HStack {
                 Text("Age : ")
-                TextField("Age", value: $user.age, formatter: NumberFormatter())
+                TextField("Age", value: $values[1], formatter: NumberFormatter())
                     .padding(.horizontal)
                     .frame(width: 200, height: 55)
                     .background(Color(.systemGray4))
@@ -38,7 +36,7 @@ struct ChangeProfileView: View {
             
             HStack {
                 Text("Email : ")
-                TextField("Email", text: $user.email)
+                TextField("Email", text: $values[2])
                     .padding(.horizontal)
                     .frame(width: 200, height: 55)
                     .background(Color(.systemGray4))
@@ -47,7 +45,7 @@ struct ChangeProfileView: View {
             
             HStack {
                 Text("Height : ")
-                TextField("Height", value: $user.height, formatter: NumberFormatter())
+                TextField("Height", value: $values[3], formatter: NumberFormatter())
                     .padding(.horizontal)
                     .frame(width: 200, height: 55)
                     .background(Color(.systemGray4))
@@ -56,7 +54,7 @@ struct ChangeProfileView: View {
             }
             HStack {
                 Text("Weight : ")
-                TextField("Weight", value: $user.weight, formatter: NumberFormatter())
+                TextField("Weight", value: $values[4], formatter: NumberFormatter())
                     .padding(.horizontal)
                     .frame(width: 200, height: 55)
                     .background(Color(.systemGray4))
@@ -66,7 +64,7 @@ struct ChangeProfileView: View {
             
             HStack {
                 Text("Drinking\nobjective : ")
-                TextField("Drinking objective", value: $user.drinking_objectif, formatter: NumberFormatter())
+                TextField("Drinking objective", value: $values[5], formatter: NumberFormatter())
                     .padding(.horizontal)
                     .frame(width: 200, height: 55)
                     .background(Color(.systemGray4))
@@ -77,7 +75,7 @@ struct ChangeProfileView: View {
             Button {
                 saveButtonPressed()
             } label: {
-                Text("Update profile")
+                Text("Add user")
                     .foregroundColor(.white)
                     .font(.headline)
                     .frame(height: 55)
@@ -87,27 +85,28 @@ struct ChangeProfileView: View {
                 
             }.padding()
         }
-        .navigationTitle("Update profile")
+        .navigationTitle("Add user")
         .alert(isPresented: $showAlert) {
-            Alert(title: Text("Your item must be at least 3 characters long"))
+            Alert(title: Text(alertContent))
         }
     }
     
     func saveButtonPressed() {
-        if(user.name.count < 3) {
+        if(values[0].count < 3) {
+            alertContent = "Your item must be at least 3 characters long"
+            showAlert.toggle()
+        } else if(!values[2].contains("@")) {
+            alertContent = "Your item must be at least 3 characters long"
             showAlert.toggle()
         } else {
+            viewModel.addUser(name: values[0], age: Int(values[1])!, email: values[2], height: Int(values[3])!, weight: Int(values[4])!, drinking_objectif: Int(values[5])!, avatar: Avatar(color1: "red", color2: "yellow"))
             self.presentationMode.wrappedValue.dismiss()
         }
     }
-    
-    func getResp() -> [String] {
-        return [user.name, String(user.age), String(user.height), String(user.weight), String(user.drinking_objectif)]
-    }
 }
 
-struct ChangeProfileView_Previews: PreviewProvider {
+struct AddUserView_Previews: PreviewProvider {
     static var previews: some View {
-        ChangeProfileView(user: User.allCases[0])
+        AddUserView()
     }
 }

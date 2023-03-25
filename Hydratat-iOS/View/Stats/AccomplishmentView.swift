@@ -9,10 +9,10 @@ import SwiftUI
 
 struct AccomplishmentView: View {
     @State var accomplishment: Accomplishment
-    @State private var value: Double = 0.5
+    @State private var value: Double = 0.4
     
     var body: some View {
-        let color: Color = accomplishment.is_accomplished ? .green : .red
+        let color: Color = accomplishment.is_accomplished ? .green : (value >= 0.5 ? .orange : .red)
         ZStack(alignment: .leading) {
             Rectangle()
                 .foregroundColor(.gray.opacity(0.5))
@@ -22,14 +22,18 @@ struct AccomplishmentView: View {
                 if(accomplishment.is_accomplished) {
                     Image(systemName: "checkmark.circle.fill")
                         .resizable()
-                        .frame(width: 50, height: 50)
+                        .frame(width: 60, height: 60)
                 } else {
-                    Gauge(value: value, in: 0...1) {
-                        Text("\(Int(value * 100))%")
+                    Button {
+                        accomplishment.setAccomplished()
+                    } label : {
+                        Gauge(value: value, in: 0...1) {
+                            Text("\(Int(value * 100))%")
+                        }
+                        .frame(width: 60, height: 60)
+                        .gaugeStyle(.accessoryCircularCapacity)
+                        .foregroundColor(color)
                     }
-                    .frame(width: 60, height: 60)
-                    .gaugeStyle(.accessoryCircularCapacity)
-                    .foregroundColor(color)
                 }
                 
                 VStack(alignment: .leading, spacing: 5) {
@@ -47,6 +51,6 @@ struct AccomplishmentView: View {
 
 struct AccomplishmentView_Previews: PreviewProvider {
     static var previews: some View {
-        AccomplishmentView(accomplishment: Accomplishment.allCases[0])
+        AccomplishmentView(accomplishment: Accomplishment.allCases[2])
     }
 }

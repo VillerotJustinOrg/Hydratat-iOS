@@ -11,26 +11,16 @@ struct Accomplishment {
     var id_accomp = UUID()
     var name_accomp: String
     var description: String
-    var is_accomplished: Bool = false
+    var is_accomplished: Bool
     
     mutating func setAccomplished() {
         self.is_accomplished = true
     }
     
-    static func getNbAccomplished() -> Int {
-        var nb = 0
-        for acc in Accomplishment.allCases {
-            if acc.is_accomplished {
-                nb += 1
-            }
-        }
-        return nb
-    }
-    
     static var allCases = [
-        Accomplishment(name_accomp: "1st", description: "Drink for the first time"),
-        Accomplishment(name_accomp: "x10", description: "Drink ten liters of drinking since the beginning"),
-        Accomplishment(name_accomp: "10 days", description: "Ten daily goals achieved")
+        Accomplishment(name_accomp: "1st", description: "Drink for the first time", is_accomplished: true),
+        Accomplishment(name_accomp: "x10", description: "Drink ten liters of drinking since the beginning", is_accomplished: false),
+        Accomplishment(name_accomp: "10 days", description: "Ten daily goals achieved", is_accomplished: false)
     ]
 }
 
