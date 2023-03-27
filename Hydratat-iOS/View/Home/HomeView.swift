@@ -8,31 +8,38 @@
 import SwiftUI
 
 struct HomeView: View {
-    private var user: User
-    private var value: Double
-    
-    init(user: User) {
-        self.user = user
-        self.value = Double(user.drinking_objectif)/2000.0
-    }
+    @EnvironmentObject var viewModel: AppViewModel
     
     var body: some View {
         NavigationView {
+            var user = viewModel.currentUser
+            let value = Double(user.getSumQuantityDay(day: Date.now))/Double(user.drinking_objectif)
             HStack(spacing: 15) {
-                Image("Bottle\(Int(value*8) + 1)")
+                Image(value > 1 ? "Bottle9" : "Bottle\(Int(value*8) + 1)")
                     .resizable()
                     .frame(width: 175, height: 643)
                 
                 VStack(spacing: 30) {
-                    Text("Objectif  de la journée")
+                    Text("Objectif  de la journée : \(user.drinking_objectif)mL")
                         .font(.title2)
                         .multilineTextAlignment(.center)
                     
-                    Gauge(value: value, in: 0...1) {
-                        Text("\(Int(value * 100))%")
+                    if value >= 1 {
+                        HStack {
+                            Image(systemName: "checkmark.circle.fill")
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                            
+                            Text("Atteint pour aujourd'hui").bold()
+                        }
+                        .foregroundColor(.green)
+                    } else {
+                        Gauge(value: value, in: 0...1) {
+                            Text("\(Int(value * 100))%")
+                        }
+                        .gaugeStyle(.accessoryCircularCapacity)
+                        .foregroundColor(value >= 0.5 ? .orange : .red)
                     }
-                    .gaugeStyle(.accessoryCircularCapacity)
-                    .foregroundColor(.orange)
                     
                     Button {
                     } label: {
@@ -51,6 +58,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(user: User.allCases[0])
+        HomeView().environmentObject(AppViewModel())
     }
 }

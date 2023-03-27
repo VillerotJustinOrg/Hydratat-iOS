@@ -14,9 +14,16 @@ enum TypeQuantity: String, CaseIterable {
     
     var contentML: [Int] {
         switch self {
-            case .Verre: return [250]
-            case .Canette: return []
-            case .Bouteille: return []
+            case .Verre: return [150, 250]
+            case .Canette: return [250, 330, 500]
+            case .Bouteille: return [250, 330, 500, 1000, 1500, 2000]
         }
     }
+}
+
+struct Quantity {
+    var id_quantity = UUID()
+    var type_quantity: TypeQuantity
+    var content: Int
+    var day: String
 }

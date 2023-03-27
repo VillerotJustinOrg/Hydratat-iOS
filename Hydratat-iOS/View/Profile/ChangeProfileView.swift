@@ -9,14 +9,13 @@ import SwiftUI
 
 struct ChangeProfileView: View {
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var viewModel: AppViewModel
     @State var user: User
     @State var showAlert: Bool = false
     
     var body: some View {
         VStack {
-            HStack(spacing: 20) {
-                AvatarView(size: 50, user: user)
-            }
+            AvatarView(size: 50, user: user)
             
             HStack {
                 Text("Username : ")
@@ -108,6 +107,6 @@ struct ChangeProfileView: View {
 
 struct ChangeProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ChangeProfileView(user: User.allCases[0])
+        ChangeProfileView(user: User.allCases[0]).environmentObject(AppViewModel())
     }
 }

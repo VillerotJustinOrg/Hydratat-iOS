@@ -11,7 +11,7 @@ struct AddUserView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var viewModel: AppViewModel
     @State private var showAlert = false
-    @State var values = ["","","","","",""]
+    @State var values = ["","","@","","",""]
     @State private var alertContent = ""
     
     var body: some View {
@@ -27,8 +27,9 @@ struct AddUserView: View {
             
             HStack {
                 Text("Age : ")
-                TextField("Age", value: $values[1], formatter: NumberFormatter())
+                TextField("Age", text: $values[1])
                     .padding(.horizontal)
+                    .keyboardType(.numberPad)
                     .frame(width: 200, height: 55)
                     .background(Color(.systemGray4))
                     .cornerRadius(10)
@@ -45,8 +46,9 @@ struct AddUserView: View {
             
             HStack {
                 Text("Height : ")
-                TextField("Height", value: $values[3], formatter: NumberFormatter())
+                TextField("Height", text: $values[3])
                     .padding(.horizontal)
+                    .keyboardType(.numberPad)
                     .frame(width: 200, height: 55)
                     .background(Color(.systemGray4))
                     .cornerRadius(10)
@@ -54,8 +56,9 @@ struct AddUserView: View {
             }
             HStack {
                 Text("Weight : ")
-                TextField("Weight", value: $values[4], formatter: NumberFormatter())
+                TextField("Weight", text: $values[4])
                     .padding(.horizontal)
+                    .keyboardType(.numberPad)
                     .frame(width: 200, height: 55)
                     .background(Color(.systemGray4))
                     .cornerRadius(10)
@@ -64,8 +67,9 @@ struct AddUserView: View {
             
             HStack {
                 Text("Drinking\nobjective : ")
-                TextField("Drinking objective", value: $values[5], formatter: NumberFormatter())
+                TextField("Drinking objective", text: $values[5])
                     .padding(.horizontal)
+                    .keyboardType(.numberPad)
                     .frame(width: 200, height: 55)
                     .background(Color(.systemGray4))
                     .cornerRadius(10)
@@ -96,17 +100,31 @@ struct AddUserView: View {
             alertContent = "Your item must be at least 3 characters long"
             showAlert.toggle()
         } else if(!values[2].contains("@")) {
-            alertContent = "Your item must be at least 3 characters long"
+            alertContent = "Email is not valid"
             showAlert.toggle()
         } else {
-            viewModel.addUser(name: values[0], age: Int(values[1])!, email: values[2], height: Int(values[3])!, weight: Int(values[4])!, drinking_objectif: Int(values[5])!, avatar: Avatar(color1: "red", color2: "yellow"))
+            let colors = generateTwoRandomColor()
+            viewModel.addUser(name: values[0], age: Int(values[1])!, email: values[2], height: Int(values[3])!, weight: Int(values[4])!, drinking_objectif: Int(values[5])!, avatar: Avatar(color1: colors[0], color2: colors[1]))
             self.presentationMode.wrappedValue.dismiss()
         }
+    }
+    
+    private func generateTwoRandomColor() -> [String] {
+        let colors: [Color] = [.black, .white, .gray, .red, .green, .blue, .orange, .yellow, .pink, .purple, .accentColor, .primary, .secondary]
+        var index1 = Int.random(in: 0...colors.count - 1)
+        var index2 = Int.random(in: 0...colors.count - 1)
+        
+        while(index1 == index2) {
+            index1 = Int.random(in: 0...colors.count - 1)
+            index2 = Int.random(in: 0...colors.count - 1)
+        }
+        
+        return [colors[index1].description, colors[index2].description]
     }
 }
 
 struct AddUserView_Previews: PreviewProvider {
     static var previews: some View {
-        AddUserView()
+        AddUserView().environmentObject(AppViewModel())
     }
 }

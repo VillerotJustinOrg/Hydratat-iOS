@@ -15,21 +15,19 @@ struct AvatarView: View {
         ZStack {
             let height = size * 1.5
             Circle()
-                //.foregroundColor(.orange)
                 .foregroundColor(getColorFromStr(string: user.avatar.color1))
                 .frame(height: height * 1.1)
             
             Image("Drop")
                 .resizable()
                 .renderingMode(.template)
-                //.foregroundColor(.purple)
                 .frame(width: size, height: height)
                 .foregroundColor(getColorFromStr(string: user.avatar.color2))
         }
     }
     
     func getColorFromStr(string: String) -> Color {
-        let colors: [Color] = [.red, .yellow, .green, .blue, .orange, .purple]
+        let colors: [Color] = [.black, .white, .gray, .red, .green, .blue, .orange, .yellow, .pink, .purple, .accentColor, .primary, .secondary]
         for color in colors {
             if color.description == string {
                 return color
@@ -41,6 +39,30 @@ struct AvatarView: View {
 
 struct AvatarView_Previews: PreviewProvider {
     static var previews: some View {
-        AvatarView(size: 50, user: User.allCases[0])
+        VStack(spacing: 20) {
+            let colors: [Color] = [.black, .white, .gray, .red, .green, .blue, .orange, .yellow, .pink, .purple, .accentColor, .primary, .secondary]
+            HStack {
+                ForEach(User.allCases, id: \.self.id_user) { user in
+                    Button {
+                    } label: {
+                        AvatarView(size: 70, user: user)
+                    }
+                }
+            }
+            ScrollView(.horizontal) {
+                ZStack {
+                    Color.gray.ignoresSafeArea().frame(height: 50)
+                    HStack {
+                        ForEach(colors, id: \.self) { index in
+                            Rectangle()
+                                .cornerRadius(10)
+                                .foregroundColor(index)
+                                .frame(width: 40, height: 40)
+                        }
+                    }
+                }
+            }.padding()
+
+        }
     }
 }

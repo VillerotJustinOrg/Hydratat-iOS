@@ -10,6 +10,7 @@ import SwiftUI
 struct ChangeUserView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var viewModel: AppViewModel
+    @State private var selectedUser: User?
     @State private var showAlert = false
     
     var body: some View {
@@ -19,11 +20,12 @@ struct ChangeUserView: View {
                 Text("New user")
             }
             List {
-                ForEach(User.allCases, id: \.self.id_user) { user in
+                ForEach(viewModel.users, id: \.self.id_user) { user in
                     Button {
                         if viewModel.compareUsers(user: user) {
                             self.presentationMode.wrappedValue.dismiss()
                         } else {
+                            selectedUser = user
                             showAlert.toggle()
                         }
                     } label: {
@@ -36,11 +38,13 @@ struct ChangeUserView: View {
                         }
                     }
                     .alert(isPresented: $showAlert) {
-                        Alert(title: Text("Change user ?"),
-                              primaryButton: .default(Text("Yes"), action: {
-                            saveButtonPressed(user: user)
-                        }),
-                              secondaryButton: .cancel(Text("No")))
+                        Alert(title: Text("Change user to \(selectedUser?.name ?? "") ?"),
+                            primaryButton: .default(Text("Yes"), action: {
+                                if let u = selectedUser {
+                                    saveButtonPressed(user: u)
+                                }
+                            }),
+                            secondaryButton: .cancel(Text("No")))
                     }
                 }
             }
@@ -49,8 +53,8 @@ struct ChangeUserView: View {
     }
     
     func saveButtonPressed(user: User) {
-        print("\(user.name)")
         viewModel.changeUser(user: user)
+        print("\(user.name) - \(user.getQuantities().count)")
         self.presentationMode.wrappedValue.dismiss()
     }
 }

@@ -16,6 +16,8 @@ struct User {
     var height: Int //en cm
     var weight: Int
     var drinking_objectif: Int //en mL
+    var quantites: [Quantity] = []
+    var accomplishments: [Accomplishment] = Accomplishment.allCases
     
     static var allCases: [User] = [
         User(avatar: Avatar(color1: "orange", color2: "purple"), name: "Flo", age: 28, email: "flo@gmail.com", height: 179, weight: 71, drinking_objectif: 1500),
@@ -25,6 +27,37 @@ struct User {
     
     mutating func modifyAvatar(color1: String, color2: String) {
         self.avatar = Avatar(color1: color1, color2: color2)
+    }
+    
+    mutating func addQuantity(quantity: Quantity) {
+        self.quantites.append(quantity)
+    }
+    
+    mutating func getNbAccomplished() -> Int {
+        var nb = 0
+        for acc in self.accomplishments {
+            if acc.is_accomplished {
+                nb += 1
+                print(nb)
+            }
+        }
+        return nb
+    }
+            
+    func getQuantities() -> [Quantity] {
+        return self.quantites
+    }
+    
+    mutating func getSumQuantityDay(day: Date) -> Int {
+        var sum = 0
+        let dateStr = day.formatted(date: .numeric, time: .omitted)
+        for qu in quantites {
+            if(qu.day == dateStr) {
+                sum += qu.content
+            }
+        }
+        print(sum)
+        return sum
     }
     
     mutating func modifyProfile(name: String, age: Int, email: String, height: Int, weight: Int, drinking: Int) {

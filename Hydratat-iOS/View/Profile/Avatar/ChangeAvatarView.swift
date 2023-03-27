@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ChangeAvatarView: View {
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var viewModel: AppViewModel
     @State var user: User
     
     var body: some View {
@@ -54,12 +55,12 @@ struct ChangeAvatarView: View {
     
     func saveButtonPressed() {
         user.modifyAvatar(color1: user.avatar.color1, color2: user.avatar.color2)
-        self.presentationMode.wrappedValue.dismiss()    //Retourne à la page précédente après le click sur Save
+        self.presentationMode.wrappedValue.dismiss()
     }
 }
 
 struct ChangeAvatarView_Previews: PreviewProvider {
     static var previews: some View {
-        ChangeAvatarView(user: User.allCases[0])
+        ChangeAvatarView(user: User.allCases[0]).environmentObject(AppViewModel())
     }
 }

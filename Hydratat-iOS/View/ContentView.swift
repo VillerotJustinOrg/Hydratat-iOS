@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var viewModel: AppViewModel
+    
     var body: some View {
         ZStack {
             Color.accentColor.ignoresSafeArea()
@@ -17,7 +18,7 @@ struct ContentView: View {
                     Text("Hydratat-iOS").font(Font.custom("waver", size: 28))
                 }
                 TabView {
-                    HomeView(user: viewModel.getCurrentUser())
+                    HomeView()
                         .tabItem {
                             Image(systemName: "homekit")
                             Text("Home")
@@ -29,7 +30,7 @@ struct ContentView: View {
                             Text("Stats")
                         }
                     
-                    ProfileView(user: viewModel.getCurrentUser())
+                    ProfileView()
                         .tabItem {
                             Image("Drop_mini")
                                 .renderingMode(.template)

@@ -9,9 +9,9 @@ import SwiftUI
 
 struct AccomplishmentView: View {
     @State var accomplishment: Accomplishment
-    @State private var value: Double = 0.4
     
     var body: some View {
+        let value = accomplishment.progression
         let color: Color = accomplishment.is_accomplished ? .green : (value >= 0.5 ? .orange : .red)
         ZStack(alignment: .leading) {
             Rectangle()
@@ -25,7 +25,7 @@ struct AccomplishmentView: View {
                         .frame(width: 60, height: 60)
                 } else {
                     Button {
-                        accomplishment.setAccomplished()
+                        accomplishment.increaseProgession(prog: 0.1)
                     } label : {
                         Gauge(value: value, in: 0...1) {
                             Text("\(Int(value * 100))%")
