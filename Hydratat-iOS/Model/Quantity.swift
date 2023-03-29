@@ -8,15 +8,15 @@
 import Foundation
 
 enum TypeQuantity: String, CaseIterable {
-    case Verre
-    case Canette
-    case Bouteille
+    case Glass
+    case Can
+    case Bottle
     
     var contentML: [Int] {
         switch self {
-            case .Verre: return [150, 250]
-            case .Canette: return [250, 330, 500]
-            case .Bouteille: return [250, 330, 500, 1000, 1500, 2000]
+            case .Glass: return [150, 250]
+            case .Can: return [250, 330, 500]
+            case .Bottle: return [250, 330, 500, 1000, 1500, 2000]
         }
     }
 }

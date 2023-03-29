@@ -24,7 +24,10 @@ struct HomeView: View {
                     .frame(width: 175, height: 643)
                 
                 VStack(spacing: 30) {
-                    Text("Objectif  de la journée : \(user.drinking_objectif)mL")
+                    let obj = user.drinking_objectif >= 1000
+                        ? "\(String(format: "%.1f", Double(user.drinking_objectif)/1000.0)) L"
+                        : "\(String(user.drinking_objectif)) mL"
+                    Text("Objective of the day : \(obj)")
                         .font(.title2)
                         .multilineTextAlignment(.center)
                     
@@ -34,7 +37,7 @@ struct HomeView: View {
                                 .resizable()
                                 .frame(width: 50, height: 50)
                             
-                            Text("Atteint pour aujourd'hui").bold()
+                            Text("Achieved for today").bold()
                         }
                         .onReceive(Just(value)) { newValue in
                             if newValue > 1.0 {
@@ -62,13 +65,13 @@ struct HomeView: View {
                 }
             }
             .alert(isPresented: $showAlert) {
-                Alert(title: Text("Voulez-vous augmenter votre objectif journalier ?"),
-                    primaryButton: .default(Text("OUI")) {
+                Alert(title: Text("Do you want to increase your daily target ?"),
+                    primaryButton: .default(Text("Yes")) {
                         changeAlert = true
                     },
                     secondaryButton: .cancel())
             }
-            .alert("Nouvel objectif journalier", isPresented: $changeAlert, actions: {
+            .alert("New daily target", isPresented: $changeAlert, actions: {
                 Button("OK", action: {
                     // Vérifie si modify content ne contient que des chiffres
                     let allNumb = modifycontent.rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) == nil
@@ -78,7 +81,7 @@ struct HomeView: View {
                         user.drinking_objectif = Int(modifycontent)!
                     }
                 })
-                TextField("TextField", text: $modifycontent)
+                TextField("Daily target", text: $modifycontent)
             })
         }
     }

@@ -12,7 +12,7 @@ struct InputLitersView: View {
     @Environment(\.presentationMode) var presentationMode
     
     @State var content: Int = 0
-    @State var type: TypeQuantity = .Verre
+    @State var type: TypeQuantity = .Glass
     @State var showAlert: Bool = false
     
     var body: some View {
