@@ -59,6 +59,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EF0C6C9529D4C91100D48575 /* Captures */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Captures;
+			sourceTree = "<group>";
+		};
 		EF275EA329BF1AC300955CF9 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +85,7 @@
 		EF275EAE29BF1AC300955CF9 /* Hydratat-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				EF0C6C9529D4C91100D48575 /* Captures */,
 				EF464AE429CE1A59004B0827 /* Info.plist */,
 				EF275EBD29BF1B0A00955CF9 /* Font */,
 				EF275EBE29BF1B1100955CF9 /* Model */,
