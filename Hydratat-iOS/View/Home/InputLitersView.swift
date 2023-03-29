@@ -55,7 +55,7 @@ struct InputLitersView: View {
         if(content == 0) {
             showAlert.toggle()
         } else {
-            data.currentUser.addQuantity(quantity: Quantity(type_quantity: type, content: content, day: Date.now.formatted(date: .numeric, time: .omitted)))
+            data.currentUser.addQuantity(quantity: Quantity(type_quantity: type, content: content, date: Date.now))
             self.presentationMode.wrappedValue.dismiss()
         }
     }

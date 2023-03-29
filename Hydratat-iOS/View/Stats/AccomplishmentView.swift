@@ -8,49 +8,49 @@
 import SwiftUI
 
 struct AccomplishmentView: View {
-    @State var accomplishment: Accomplishment
+    @State var showDetails = false
+    @State var user: User
+    @State var date: String
     
     var body: some View {
-        let value = accomplishment.progression
-        let color: Color = accomplishment.is_accomplished ? .green : (value >= 0.5 ? .orange : .red)
-        ZStack(alignment: .leading) {
-            Rectangle()
-                .foregroundColor(.gray.opacity(0.5))
-                .frame(height: 100)
-                
-            HStack(spacing: 15) {
-                if(accomplishment.is_accomplished) {
-                    Image(systemName: "checkmark.circle.fill")
-                        .resizable()
-                        .frame(width: 60, height: 60)
-                } else {
-                    Button {
-                        accomplishment.increaseProgession(prog: 0.1)
-                    } label : {
-                        Gauge(value: value, in: 0...1) {
-                            Text("\(Int(value * 100))%")
-                        }
-                        .frame(width: 60, height: 60)
-                        .gaugeStyle(.accessoryCircularCapacity)
-                        .foregroundColor(color)
+        var quantities = user.getQuantityDay(day: date)
+        VStack {
+            let value = Double(user.getSumQuantityDay(day: date))/Double(user.drinking_objectif)
+            let color: Color = value >= 1.0 ? .blue : .red
+            ZStack(alignment: .leading) {
+                Rectangle()
+                    .foregroundColor(.gray.opacity(0.5))
+                    .frame(height: 100)
+
+                Button {
+                    showDetails.toggle()
+                    quantities = user.getQuantityDay(day: date)
+                } label: {
+                    HStack(spacing: 15) {
+                        Image("Drop_mini")
+                            .resizable()
+                            .renderingMode(.template)
+                            .frame(width: 60, height: 60)
+                        
+                        Text("\(date)")
+                            .font(.title).bold()
                     }
+                    .foregroundColor(color)
                 }
-                
-                VStack(alignment: .leading, spacing: 5) {
-                    Text("\(accomplishment.name_accomp)")
-                        .font(.title).bold()
-                    
-                    Text("\(accomplishment.description)")
+                .padding()
+            }
+            
+            if showDetails && quantities.count != 0 {
+                ForEach(quantities, id: \.self.id_quantity) { qu in
+                    Text("\(qu.type_quantity.rawValue) - \(qu.content) mL").multilineTextAlignment(.leading)
                 }
             }
-            .padding()
-            .foregroundColor(color)
         }
     }
 }
 
 struct AccomplishmentView_Previews: PreviewProvider {
     static var previews: some View {
-        AccomplishmentView(accomplishment: Accomplishment.allCases[2])
+        AccomplishmentView(user: User.allCases[1], date: Date.init(timeInterval: -86400, since: .now).formatted(date: .numeric, time: .omitted))
     }
 }

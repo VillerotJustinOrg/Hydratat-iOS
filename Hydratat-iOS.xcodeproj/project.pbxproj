@@ -13,7 +13,6 @@
 		EF275EB729BF1AC400955CF9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF275EB629BF1AC400955CF9 /* Preview Assets.xcassets */; };
 		EF275EC629BF1C5800955CF9 /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF275EC329BF1C5800955CF9 /* Avatar.swift */; };
 		EF275EC729BF1C5800955CF9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF275EC429BF1C5800955CF9 /* User.swift */; };
-		EF275EC829BF1C5800955CF9 /* Accomplishment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF275EC529BF1C5800955CF9 /* Accomplishment.swift */; };
 		EF275ECA29BF1C7000955CF9 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF275EC929BF1C7000955CF9 /* AppViewModel.swift */; };
 		EF275ED029BF1C8400955CF9 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF275ECB29BF1C8400955CF9 /* StatsView.swift */; };
 		EF275ED129BF1C8400955CF9 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF275ECC29BF1C8400955CF9 /* AvatarView.swift */; };
@@ -25,8 +24,6 @@
 		EF70B04B29CF4C54003AE710 /* AddUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF70B04A29CF4C54003AE710 /* AddUserView.swift */; };
 		EF70B04D29CF6268003AE710 /* waver.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF70B04C29CF6268003AE710 /* waver.ttf */; };
 		EF70B04F29CF634B003AE710 /* Quantity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF70B04E29CF634B003AE710 /* Quantity.swift */; };
-		EFECE95129C874230020CA43 /* ChangeProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECE95029C874230020CA43 /* ChangeProfileView.swift */; };
-		EFF1A1DE29CB445C004097F0 /* ChangeAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF1A1DD29CB445C004097F0 /* ChangeAvatarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +34,6 @@
 		EF275EB629BF1AC400955CF9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EF275EC329BF1C5800955CF9 /* Avatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
 		EF275EC429BF1C5800955CF9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		EF275EC529BF1C5800955CF9 /* Accomplishment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Accomplishment.swift; sourceTree = "<group>"; };
 		EF275EC929BF1C7000955CF9 /* AppViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		EF275ECB29BF1C8400955CF9 /* StatsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		EF275ECC29BF1C8400955CF9 /* AvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
@@ -50,8 +46,6 @@
 		EF70B04A29CF4C54003AE710 /* AddUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserView.swift; sourceTree = "<group>"; };
 		EF70B04C29CF6268003AE710 /* waver.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = waver.ttf; sourceTree = "<group>"; };
 		EF70B04E29CF634B003AE710 /* Quantity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quantity.swift; sourceTree = "<group>"; };
-		EFECE95029C874230020CA43 /* ChangeProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileView.swift; sourceTree = "<group>"; };
-		EFF1A1DD29CB445C004097F0 /* ChangeAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAvatarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +109,6 @@
 		EF275EBE29BF1B1100955CF9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EF275EC529BF1C5800955CF9 /* Accomplishment.swift */,
 				EF275EC329BF1C5800955CF9 /* Avatar.swift */,
 				EF275EC429BF1C5800955CF9 /* User.swift */,
 				EF70B04E29CF634B003AE710 /* Quantity.swift */,
@@ -146,7 +139,6 @@
 			isa = PBXGroup;
 			children = (
 				EFF1A1DC29CB442F004097F0 /* Avatar */,
-				EFECE95029C874230020CA43 /* ChangeProfileView.swift */,
 				EF66CD7C29CB308A007A3CED /* ChangeUserView.swift */,
 				EF275ECF29BF1C8400955CF9 /* ProfileView.swift */,
 				EF70B04A29CF4C54003AE710 /* AddUserView.swift */,
@@ -176,7 +168,6 @@
 			isa = PBXGroup;
 			children = (
 				EF275ECC29BF1C8400955CF9 /* AvatarView.swift */,
-				EFF1A1DD29CB445C004097F0 /* ChangeAvatarView.swift */,
 			);
 			path = Avatar;
 			sourceTree = "<group>";
@@ -258,11 +249,8 @@
 				EF275ED329BF1C8400955CF9 /* AccomplishmentView.swift in Sources */,
 				EF275EC629BF1C5800955CF9 /* Avatar.swift in Sources */,
 				EF275EB229BF1AC300955CF9 /* ContentView.swift in Sources */,
-				EFECE95129C874230020CA43 /* ChangeProfileView.swift in Sources */,
 				EF275EC729BF1C5800955CF9 /* User.swift in Sources */,
-				EFF1A1DE29CB445C004097F0 /* ChangeAvatarView.swift in Sources */,
 				EF275ECA29BF1C7000955CF9 /* AppViewModel.swift in Sources */,
-				EF275EC829BF1C5800955CF9 /* Accomplishment.swift in Sources */,
 				EF70B04F29CF634B003AE710 /* Quantity.swift in Sources */,
 				EF275ED129BF1C8400955CF9 /* AvatarView.swift in Sources */,
 				EF275ED029BF1C8400955CF9 /* StatsView.swift in Sources */,

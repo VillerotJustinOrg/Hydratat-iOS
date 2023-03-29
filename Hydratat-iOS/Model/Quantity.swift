@@ -22,8 +22,15 @@ enum TypeQuantity: String, CaseIterable {
 }
 
 struct Quantity {
-    var id_quantity = UUID()
+    var id_quantity: UUID
     var type_quantity: TypeQuantity
     var content: Int
     var day: String
+    
+    init(type_quantity: TypeQuantity, content: Int, date: Date) {
+        self.id_quantity = UUID()
+        self.type_quantity = type_quantity
+        self.content = content
+        self.day = date.formatted(date: .numeric, time: .omitted)
+    }
 }

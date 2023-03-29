@@ -12,19 +12,15 @@ struct StatsView: View {
 
     var body: some View {
         ScrollView {
-            var user = viewModel.currentUser
+            let user = viewModel.currentUser
             Spacer()
             VStack(spacing: 20) {
-                Text("\(user.name)'s accomplishments : \(user.getNbAccomplished())/\(user.accomplishments.count)")
+                Text("\(user.name)'s statistics")
+                    .font(.title2)
                 VStack(alignment: .leading) {
-                    ForEach(user.accomplishments, id: \.self.id_accomp) { acc in
-                        AccomplishmentView(accomplishment: acc).environmentObject(AppViewModel())
+                    ForEach(user.getAllDatesFromQuantities(), id: \.self) { date in
+                        AccomplishmentView(user: user, date: date)
                     }
-                }
-            }
-            VStack {
-                ForEach(user.quantites, id: \.self.id_quantity) { qu in
-                    Text("\(qu.type_quantity.rawValue) - \(qu.content)mL")
                 }
             }
         }

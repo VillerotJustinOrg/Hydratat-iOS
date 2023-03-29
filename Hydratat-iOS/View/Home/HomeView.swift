@@ -6,14 +6,18 @@
 //
 
 import SwiftUI
+import Combine
 
 struct HomeView: View {
     @EnvironmentObject var viewModel: AppViewModel
+    @State private var showAlert = false
+    @State private var changeAlert = false
+    @State private var modifycontent = ""
     
     var body: some View {
         NavigationView {
             var user = viewModel.currentUser
-            let value = Double(user.getSumQuantityDay(day: Date.now))/Double(user.drinking_objectif)
+            let value = Double(user.getSumQuantityDay(day: Date.now.formatted(date: .numeric, time: .omitted)))/Double(user.drinking_objectif)
             HStack(spacing: 15) {
                 Image(value > 1 ? "Bottle9" : "Bottle\(Int(value*8) + 1)")
                     .resizable()
@@ -31,6 +35,11 @@ struct HomeView: View {
                                 .frame(width: 50, height: 50)
                             
                             Text("Atteint pour aujourd'hui").bold()
+                        }
+                        .onReceive(Just(value)) { newValue in
+                            if newValue > 1.0 {
+                                showAlert = true
+                            }
                         }
                         .foregroundColor(.green)
                     } else {
@@ -52,6 +61,25 @@ struct HomeView: View {
                     }
                 }
             }
+            .alert(isPresented: $showAlert) {
+                Alert(title: Text("Voulez-vous augmenter votre objectif journalier ?"),
+                    primaryButton: .default(Text("OUI")) {
+                        changeAlert = true
+                    },
+                    secondaryButton: .cancel())
+            }
+            .alert("Nouvel objectif journalier", isPresented: $changeAlert, actions: {
+                Button("OK", action: {
+                    // Vérifie si modify content ne contient que des chiffres
+                    let allNumb = modifycontent.rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) == nil
+                    
+                    if modifycontent != "" && allNumb {
+                        changeAlert = false
+                        user.drinking_objectif = Int(modifycontent)!
+                    }
+                })
+                TextField("TextField", text: $modifycontent)
+            })
         }
     }
 }

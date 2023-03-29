@@ -14,8 +14,9 @@ struct ProfileView: View {
         NavigationView {
             VStack(spacing: 30) {
                 let user = viewModel.currentUser
+                Spacer()
                 HStack(spacing: 30) {
-                    AvatarView(size: 75, user: user)
+                    AvatarView(size: 75, user: viewModel.currentUser)
                     VStack(spacing: 10) {
                         Text("\(user.name)")
                             .font(.system(size: 36))
@@ -35,8 +36,8 @@ struct ProfileView: View {
                                 
                 Button {
                 } label: {
-                    NavigationLink(destination: ChangeProfileView(user: user)) {
-                        Text("Change profile")
+                    NavigationLink(destination: ChangeUserView()) {
+                        Text("Change user")
                             .foregroundColor(.white)
                             .font(.headline)
                             .frame(height: 55)
@@ -49,11 +50,6 @@ struct ProfileView: View {
                 Spacer()
             }
             .padding()
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink("Change", destination: ChangeUserView())
-                }
-            }
         }
     }
 }

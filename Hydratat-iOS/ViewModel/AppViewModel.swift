@@ -8,11 +8,10 @@
 import Foundation
 
 class AppViewModel: ObservableObject {
-    @Published var currentUser: User
+    @Published var currentUser: User = User.allCases[1]
     @Published var users: [User] = []
     
     init() {
-        currentUser = User.allCases[1]
         setUsers()
     }
     
@@ -29,6 +28,6 @@ class AppViewModel: ObservableObject {
     }
     
     func addUser(name: String, age: Int, email: String, height: Int, weight: Int, drinking_objectif: Int, avatar: Avatar) {
-        users.append(User(avatar: avatar, name: name, age: age, email: email, height: height, weight: weight, drinking_objectif: drinking_objectif))
+        users.append(User(avatar: avatar, name: name, age: age, email: email, height: height, weight: weight, drinking_objectif: drinking_objectif, quantites: []))
     }
 }
